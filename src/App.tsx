@@ -1,16 +1,12 @@
 import { BrowserRouter } from "react-router-dom"
 import { AppRoutes } from "./routes";
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
 import { ThemeProvider } from "@emotion/react";
-import { LightTheme } from "./shared/themes";
+import { Light } from "@mui/icons-material";
 
 
 export const App = () => {
   return (
-    <ThemeProvider theme={LightTheme}>
+    <ThemeProvider theme={Light}>
       <BrowserRouter>
         <AppRoutes />
       </BrowserRouter>
