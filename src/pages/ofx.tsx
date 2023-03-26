@@ -147,9 +147,9 @@ export default function OfxDashboard() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            { search }
+            { }
             <Divider sx={{ my: 1 }} />
-            { profile }
+            {  }
           </List>
         </Drawer>
         <Box
