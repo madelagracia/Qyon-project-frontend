@@ -19,8 +19,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { Button } from '@mui/material';
-import search from './search';
-import profile from './profile';
 
 
 function Copyright(props: any) {

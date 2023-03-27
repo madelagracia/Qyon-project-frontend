@@ -1,10 +1,9 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
-import Login from '../pages/login';
-import OfxDashboard from '../pages/ofx';
-
-
+import OfxDashboard from '../pages/ofx/Ofx';
+import Login from '../pages/login/login';
 
 export const AppRoutes = () => {
+
     return (
         <Routes>
             <Route path="/login" element={<Login />} />
@@ -13,3 +12,5 @@ export const AppRoutes = () => {
         </Routes>
     );
 };
+
+
