@@ -1,5 +1,6 @@
 import { Search } from "@mui/icons-material";
-import { Box, Button, Icon, Paper, TextField, useTheme } from "@mui/material";
+import { Box, Button, Paper, TextField, useTheme } from "@mui/material";
+import { Environment } from "../../environment";
 
 interface ISearchToolbarProps {
     searchText?: string;
@@ -15,7 +16,7 @@ export const SearchToolbar: React.FC<ISearchToolbarProps> = ({
     showInputSearch = false,
     changingSearchText,
     newTextButton = 'Search',
-    showNewButton =true,
+    showNewButton = true,
     newOnClick
 
 }) => {
@@ -36,7 +37,7 @@ export const SearchToolbar: React.FC<ISearchToolbarProps> = ({
                 <TextField
                     size='small'
                     value={searchText}
-                    placeholder="Search an OFX..."
+                    placeholder={Environment.SEARCH_INPUT}
                     onChange={(e) => changingSearchText?.(e.target.value)
                     } />
             )}
