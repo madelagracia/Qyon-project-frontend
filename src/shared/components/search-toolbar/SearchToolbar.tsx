@@ -10,7 +10,7 @@ interface IToolbarProps {
     newOnClick?: () => void;
 }
 
-export const ToolbarDashboard: React.FC<IToolbarProps> = ({
+export const SearchToolbar: React.FC<IToolbarProps> = ({
     searchText = '',
     showInputSearch = false,
     changingSearchText,

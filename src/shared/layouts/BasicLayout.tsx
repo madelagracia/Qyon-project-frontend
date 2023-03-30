@@ -1,4 +1,5 @@
-import { Box, Icon, IconButton, Theme, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Save } from "@mui/icons-material";
+import { Box, Button, Icon, IconButton, Theme, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 interface IBasicLayoutProps {
     title: string;
@@ -13,26 +14,43 @@ export const BasicLayout: React.FC<IBasicLayoutProps> = ({ children, title, tool
     const theme = useTheme();
 
     return (
-        <Box height='100%' display='flex' flexDirection='column' gap={1}>
+        <Box 
+        height='100%' 
+        display='flex' 
+        flexDirection='column' 
+        gap={1}>
 
 
-            <Box padding={1} display='flex' alignItems='center' height={theme.spacing(12)} gap={1}>
-                <Typography 
-                variant={smDown ? 'h5' : mdDown ? 'h4' : 'h3'}
-                whiteSpace='nowrap'
-                overflow='hidden'
-                textOverflow='ellipsis'
+            <Box 
+            padding={1} 
+            display='flex' 
+            alignItems='center' 
+            height={theme.spacing(12)} 
+            gap={1}
+            justifyContent='space-between'>
+
+                <Typography
+                    variant={smDown ? 'h5' : mdDown ? 'h4' : 'h3'}
+                    whiteSpace='nowrap'
+                    overflow='hidden'
+                    textOverflow='ellipsis'
                 >
                     {title}
                 </Typography>
-                
+
+                <IconButton>
+                    <Icon>settings</Icon>
+                </IconButton>
+
             </Box>
 
             <Box>
                 {toolbar}
             </Box>
 
-            <Box flex={1} overflow='auto'>
+            <Box 
+            flex={1} 
+            overflow='auto'>
                 {children}
             </Box>
 

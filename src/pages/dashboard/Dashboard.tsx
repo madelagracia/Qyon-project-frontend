@@ -1,17 +1,17 @@
 import { BasicLayout } from "../../shared/layouts/BasicLayout";
-import { ToolbarDashboard } from "../../shared/components";
+import { DetailsToolbar, SearchToolbar } from "../../shared/components";
 
 export const Dashboard: React.FC = () => {
 
     return (
         <BasicLayout
-         title='OFX Dashboard System' 
-         toolbar={(
-            <ToolbarDashboard 
+            title='OFX Dashboard System'
+            toolbar={(
+            <SearchToolbar 
             showInputSearch
              />
-                
-         )}>
+            )}>
+                 <DetailsToolbar/>
             Marcela
         </BasicLayout>
     );
