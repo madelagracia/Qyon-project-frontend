@@ -2,7 +2,7 @@ import { Environment } from "../../../environment";
 import { Api } from "../axios-config";
 
 
-interface IOfxList {
+export interface IOfxList {
     id: number;
     nameFile: string;
 }
