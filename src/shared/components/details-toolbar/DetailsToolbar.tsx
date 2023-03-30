@@ -1,8 +1,21 @@
 import { Save, Send, Upload, UploadFile } from "@mui/icons-material";
-import { Box, Button, Paper, useTheme } from "@mui/material"
+import { Box, Button, Paper, Skeleton, Typography, useTheme } from "@mui/material"
 import { Search } from "react-router-dom";
 
-export const DetailsToolbar: React.FC = () => {
+interface IDetailsToolbarProps {
+    uploadOnClick?: () => void;
+    saveOnClick?: () => void;
+    showLoadingButton?: boolean;
+    showButton?: boolean;
+
+}
+
+export const DetailsToolbar: React.FC<IDetailsToolbarProps> = ({
+    uploadOnClick,
+    saveOnClick,
+    showLoadingButton = false,
+    showButton = true
+}) => {
     const theme = useTheme();
 
     return (
@@ -17,21 +30,53 @@ export const DetailsToolbar: React.FC = () => {
             alignItems='center'
             component={Paper}>
 
-            <Button
-                variant='outlined'
-                color='primary'
-                disableElevation
-                startIcon={<UploadFile></UploadFile>}
-            > UPLOAD
-            </Button>
+            {showLoadingButton && (
+                <Skeleton width={110} height={60} />
+            )}
 
-            <Button
-                variant='contained'
-                color='primary'
-                disableElevation
-                startIcon={<Save></Save>}
-            > SAVE
-            </Button>
+            {(showButton && !showLoadingButton) && (
+                <Button
+                    variant='outlined'
+                    color='secondary'
+                    onClick={uploadOnClick}
+                    disableElevation
+                    startIcon={<UploadFile></UploadFile>}
+                >
+                    <Typography
+                        variant='button'
+                        whiteSpace='nowrap'
+                        textOverflow='ellipsis'
+                        overflow='hidden'
+                    >
+                        UPLOAD
+                    </Typography>
+                </Button>
+
+            )}
+
+            {showLoadingButton && (
+                <Skeleton width={90} height={60} />
+            )}
+
+            {(showButton && !showLoadingButton) && (
+                <Button
+                    variant='contained'
+                    color='secondary'
+                    onClick={saveOnClick}
+                    disableElevation
+                    startIcon={<Save></Save>}
+                >
+                    
+                    <Typography
+                        variant='button'
+                        whiteSpace='nowrap'
+                        textOverflow='ellipsis'
+                        overflow='hidden'
+                    > SAVE
+                    </Typography>
+                    
+                </Button>
+            )}
         </Box>
     )
 }
